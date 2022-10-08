@@ -1,8 +1,5 @@
 package org.ebebekPracticum;
 
-import java.math.BigDecimal;
-import java.math.BigInteger;
-
 public class Employee {
 
     public Employee(String name, Double salary, Double workHours, int hireYear) {
@@ -43,7 +40,7 @@ public class Employee {
     public  double bonus(){
        if(this.workHours>40){
 
-           return  (workHours-40)*30;
+           return  (this.workHours-40)*30;
        }
        return 0;
     }
