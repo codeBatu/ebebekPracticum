@@ -34,7 +34,7 @@ public class Employee {
     private  int hireYear;
     public  double tax() {
 
-        if(this.salary<1001){
+        if(this.salary<1000){
 
             return  0;
         }
@@ -51,15 +51,14 @@ public class Employee {
         var workYear = 2021-this.hireYear;
         if(workYear<9){
 
-            return tax()+bonus()+(this.salary*0.03)+this.salary;
+            return bonus()+(this.salary*0.05)+this.salary-tax();
         }
       else  if(workYear>9&&workYear<19){
 
-            return tax()+bonus()+(this.salary*0.1)+this.salary;
+            return bonus()+(this.salary*0.1)+this.salary-tax();
         }
 
-
-        return  tax()+bonus()+(this.salary*0.15)+this.salary;
+        return  bonus()+(this.salary*0.15)+this.salary-tax();
 
 
     }
