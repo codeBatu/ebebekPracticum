@@ -27,16 +27,15 @@ public class Employee {
                 "\nToplam Maaş :"+(getSalary()+raiseSalary()+bonus()-tax());
     }
 
-    private String name ;
+    private final String name ;
 
 
-    public void setSalary(Double salary) {
-        this.salary = salary;
-    }
 
-    private Double salary;
-    private  Double workHours;
-    private  int hireYear;
+
+
+    private final Double salary;
+    private final Double workHours;
+    private final int hireYear;
     public  double tax() {
 
         if(this.salary<1000){
