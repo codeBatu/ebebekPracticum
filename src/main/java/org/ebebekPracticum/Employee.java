@@ -2,6 +2,10 @@ package org.ebebekPracticum;
 
 public class Employee {
 
+    public Double getSalary() {
+        return salary;
+    }
+
     public Employee(String name, Double salary, Double workHours, int hireYear) {
         this.name = name;
         this.salary = salary;
@@ -11,12 +15,16 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "name='" + this.name + '\'' +
-                ", salary=" + this.salary +
-                ", workHours=" +this. workHours +
-                ", hireYear=" + this.hireYear +
-                '}';
+        return
+                "Adı :" + this.name  +
+                "\nMaaşı :" + this.salary +
+                "\nÇalışma Saati :" +this. workHours +
+                "\nBaşlangıç Yılı :" + this.hireYear +
+                "\nVergi :"+tax()+
+                "\nBonus :"+bonus()+
+                "\nMaaş Artışı :"+raiseSalary()+
+                "\nVergi ve Bonuslar ile birlikte maaş :" +(getSalary()+bonus()-tax())+
+                "\nToplam Maaş :"+(getSalary()+raiseSalary()+bonus()-tax());
     }
 
     private String name ;
@@ -35,7 +43,8 @@ public class Employee {
 
             return  0;
         }
-        return this.salary * 0.03;
+
+        return  getSalary()* 0.03;
     }
     public  double bonus(){
        if(this.workHours>40){
@@ -48,14 +57,13 @@ public class Employee {
         var workYear = 2021-this.hireYear;
         if(workYear<9){
 
-            return bonus()+(this.salary*0.05)+this.salary-tax();
+            return getSalary()*0.05;
         }
       else  if(workYear>9&&workYear<19){
 
-            return bonus()+(this.salary*0.1)+this.salary-tax();
+            return (getSalary()*0.1);
         }
-
-        return  bonus()+(this.salary*0.15)+this.salary-tax();
+        return (getSalary()*0.15);
 
 
     }

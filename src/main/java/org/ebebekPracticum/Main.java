@@ -3,12 +3,18 @@ package org.ebebekPracticum;
 public class Main {
     public static void main(String[] args) {
 
-        Employee employee = new Employee("Batuhan",1000D,43D,2003);
-        System.out.println("Zamsız Başlangıç Bilgileri :");
+        Employee employee =
+                new Employee(
+                        "kemal",
+                        2000D,
+                        45D,
+                        1985
+                );
+
+
+
         System.out.println(employee.toString());
-      employee.setSalary(  employee.raiseSalary());
-        System.out.println("Zamlı Hesaplanmış Maaşı :");
-        System.out.println(employee.toString());
+
 
     }
 }
